@@ -7,54 +7,48 @@ namespace NDDD.WinForm.ViewModels
     public class LatestViewModel : ViewModelBase
     {
         private readonly IMeasureRepository _measureRepository;
-        private MeasureEntity _measure;
 
         public LatestViewModel(IMeasureRepository measureRepository)
         {
             _measureRepository = measureRepository;
         }
 
+        private string _areaIDText = string.Empty;
         public string AreaIDText
         {
-            get
+            get { return _areaIDText; }
+            set
             {
-                if (_measure == null)
-                {
-                    return string.Empty;
-                }
-
-                return _measure.AreaID.ToString().PadLeft(4, '0');
+                SetProperty(ref _areaIDText, value);
             }
         }
+
+        private string _measureDateText = string.Empty;
         public string MeasureDateText
         {
-            get
+            get { return _measureDateText; }
+            set
             {
-                if (_measure == null)
-                {
-                    return string.Empty;
-                }
-
-                return _measure.MeasureDate.ToString("yyyy/MM/dd hh:mm:ss");
+                SetProperty(ref _measureDateText, value);
             }
         }
+
+        private string _measureValueText = string.Empty;
         public string MeasureValueText
         {
-            get
+            get { return _measureValueText; }
+            set
             {
-                if(_measure == null)
-                {
-                    return string.Empty;
-                }
-
-                return Math.Round(_measure.MeasureValue, 2) + "℃";
+                SetProperty(ref _measureValueText, value);
             }
         }
 
         public void Search()
         {
-            _measure = _measureRepository.GetLatest();
-            base.OnPropertyChanged();
+            MeasureEntity entity = _measureRepository.GetLatest();
+            AreaIDText = entity.AreaID.ToString().PadLeft(4, '0');
+            MeasureDateText = entity.MeasureDate.ToString("yyyy/MM/dd hh:mm:ss");
+            MeasureValueText = Math.Round(entity.MeasureValue, 2) + "℃";
         }
     }
 }
