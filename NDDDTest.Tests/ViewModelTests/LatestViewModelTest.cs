@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NDDD.WinForm.ViewModels;
 using System;
 
 namespace NDDDTest.Tests.ViewModelTests
@@ -9,6 +10,7 @@ namespace NDDDTest.Tests.ViewModelTests
         [TestMethod]
         public void シナリオ()
         {
+            var vm = new LatestViewModel();
         }
     }
 }
