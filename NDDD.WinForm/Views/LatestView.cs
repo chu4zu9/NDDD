@@ -1,13 +1,14 @@
 ﻿using NDDD.WinForm.ViewModels;
 using NDDD.Infrastructure.Fake;
 using System.Windows.Forms;
+using NDDD.Infrastructure;
 
 namespace NDDD.WinForm.Views
 {
     public partial class LatestView : Form
     {
         private readonly LatestViewModel _viewModel
-            = new LatestViewModel(new MeasureFake());
+            = new LatestViewModel(Factories.CreateMeasure());
         public LatestView()
         {
             InitializeComponent();
