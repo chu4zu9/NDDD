@@ -29,19 +29,102 @@ namespace NDDD.WinForm.Views
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.AreaIDTextBox = new System.Windows.Forms.TextBox();
+            this.MeasureDateTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.MeasureValueTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "エリアID";
+            // 
+            // AreaIDTextBox
+            // 
+            this.AreaIDTextBox.Location = new System.Drawing.Point(90, 21);
+            this.AreaIDTextBox.Name = "AreaIDTextBox";
+            this.AreaIDTextBox.ReadOnly = true;
+            this.AreaIDTextBox.Size = new System.Drawing.Size(162, 19);
+            this.AreaIDTextBox.TabIndex = 1;
+            // 
+            // MeasureDateTextBox
+            // 
+            this.MeasureDateTextBox.Location = new System.Drawing.Point(90, 49);
+            this.MeasureDateTextBox.Name = "MeasureDateTextBox";
+            this.MeasureDateTextBox.ReadOnly = true;
+            this.MeasureDateTextBox.Size = new System.Drawing.Size(162, 19);
+            this.MeasureDateTextBox.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(24, 52);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "計測日時";
+            // 
+            // MeasureValueTextBox
+            // 
+            this.MeasureValueTextBox.Location = new System.Drawing.Point(90, 77);
+            this.MeasureValueTextBox.Name = "MeasureValueTextBox";
+            this.MeasureValueTextBox.ReadOnly = true;
+            this.MeasureValueTextBox.Size = new System.Drawing.Size(162, 19);
+            this.MeasureValueTextBox.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 80);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "計測値";
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Location = new System.Drawing.Point(26, 114);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(226, 23);
+            this.SearchButton.TabIndex = 6;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
             // 
             // LatestView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 155);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.MeasureValueTextBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.MeasureDateTextBox);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.AreaIDTextBox);
+            this.Controls.Add(this.label1);
             this.Name = "LatestView";
             this.Text = "LatestView";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox AreaIDTextBox;
+        private System.Windows.Forms.TextBox MeasureDateTextBox;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox MeasureValueTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button SearchButton;
     }
 }
