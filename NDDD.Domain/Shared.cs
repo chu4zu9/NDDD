@@ -1,7 +1,10 @@
-﻿namespace NDDD.Domain
+﻿using System.Configuration;
+
+namespace NDDD.Domain
 {
     public static class Shared
     {
-        public static bool IsFake { get; } = true;
+        public static bool IsFake { get; } = 
+            ConfigurationManager.AppSettings["IsFake"] == "1";
     }
 }
