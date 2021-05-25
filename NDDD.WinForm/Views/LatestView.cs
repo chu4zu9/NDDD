@@ -12,6 +12,10 @@ namespace NDDD.WinForm.Views
         public LatestView()
         {
             InitializeComponent();
+            toolStripStatusLabel1.Visible = false;
+#if DEBUG
+            toolStripStatusLabel1.Visible = true;
+#endif
             AreaIDTextBox.DataBindings.Add(
                 "Text",
                 _viewModel,
