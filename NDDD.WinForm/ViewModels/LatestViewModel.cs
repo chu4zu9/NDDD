@@ -1,5 +1,6 @@
 ﻿using NDDD.Domain.Entities;
 using NDDD.Domain.Repositories;
+using NDDD.Infrastructure;
 using System;
 
 namespace NDDD.WinForm.ViewModels
@@ -8,6 +9,9 @@ namespace NDDD.WinForm.ViewModels
     {
         private readonly IMeasureRepository _measureRepository;
 
+        public LatestViewModel() :this(Factories.CreateMeasure())
+        {
+        }
         public LatestViewModel(IMeasureRepository measureRepository)
         {
             _measureRepository = measureRepository;

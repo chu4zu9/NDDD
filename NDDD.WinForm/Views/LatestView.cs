@@ -7,8 +7,7 @@ namespace NDDD.WinForm.Views
 {
     public partial class LatestView : Form
     {
-        private readonly LatestViewModel _viewModel
-            = new LatestViewModel(Factories.CreateMeasure());
+        private readonly LatestViewModel _viewModel = new LatestViewModel();
         public LatestView()
         {
             InitializeComponent();

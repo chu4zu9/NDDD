@@ -2,6 +2,6 @@
 {
     public static class Shared
     {
-        public static bool IsFake { get; } = false;
+        public static bool IsFake { get; } = true;
     }
 }
